@@ -3,8 +3,10 @@ import { ApolloServer } from '@apollo/server';
 import { expressMiddleware } from '@apollo/server/express4';
 import cors from 'cors';
 import { PrismaClient } from '@prisma/client';
+import dotenv from "dotenv"
 
 const startServer = async () => {
+  dotenv.config();
   const app = express();
   const prisma = new PrismaClient();
 
@@ -95,7 +97,9 @@ const startServer = async () => {
   await server.start();
 
   app.use(express.json());
-  app.use(cors());
+  app.use(cors({
+    origin: process.env.ORIGIN
+  }));
   app.use(
     '/graphql',
     expressMiddleware(server, {
