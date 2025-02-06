@@ -1,8 +1,8 @@
 import { useQuery, useMutation } from "@apollo/client"
 import { useState } from "react"
 import "./App.css"
-import { GET_TODOS, GET_ALL_USERS, GET_USER_BY_ID } from "./apollo/query/query"
-import { CREATE_USER, CREATE_TODO, UPDATE_TODO, DELETE_TODO } from "./apollo/mutation/mutation"
+import { GET_TODOS, GET_ALL_USERS, GET_USER_BY_ID } from "./apollo/query/query.js"
+import { CREATE_USER, CREATE_TODO, UPDATE_TODO, DELETE_TODO } from "./apollo/mutation/mutation.js"
 import Spinner from "./Spinner.js"
 
 function App() {
